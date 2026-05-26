@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="container">
+  <h1 class="my-4">Detalls de l'Autor</h1>
+
+  <p><strong>Nom:</strong> {{ author.first_name }}</p>
+  <p><strong>Cognom:</strong> {{ author.last_name }}</p>
+  <p><strong>Adreça:</strong> {{ author.email }}</p>
+
+  <h2 class="my-4">Posts publicats per {{ author.first_name }} {{ author.last_name }}</h2>
+  <div class="row">
+    {% for post in author.posts.all %}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        {% if post.image %}
+          <img src="{{ post.image.url }}" class="card-img-top" style="height:180px; object-fit:cover;" alt="{{ post.title }}">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title fw-bold">{{ post.title }}</h5>
+          <p class="card-text">{{ post.excerpt }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <a href="{% url 'authors-page' %}" class="btn btn-secondary mt-2">Tornar</a>
+</div>
+{% endblock %}

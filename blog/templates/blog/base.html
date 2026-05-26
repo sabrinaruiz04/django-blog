@@ -1,0 +1,28 @@
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  {% bootstrap_css %}
+  <title>Blog M3-UF6-DJANGO</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <div class="navbar-nav">
+        <a class="nav-link text-uppercase fw-bold" href="{% url 'index' %}">Inici</a>
+        <a class="nav-link text-uppercase fw-bold" href="{% url 'posts-page' %}">Posts</a>
+        <a class="nav-link text-uppercase fw-bold" href="{% url 'authors-page' %}">Autors</a>
+        <a class="nav-link text-uppercase fw-bold" href="{% url 'tags-page' %}">Tags</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p class="mb-0">© 2024 Copyright: Blog de Django-M3-UF6</p>
+  </footer>
+  {% bootstrap_javascript %}
+</body>
+</html>
