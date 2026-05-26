@@ -32,4 +32,4 @@ jobs:
 
     - name: Run pydoc
       run: |
-        python -m pydoc blog.views
+        python -c "import django; django.setup(); import pydoc; pydoc.render_doc(__import__('blog.views', fromlist=['views']))"
