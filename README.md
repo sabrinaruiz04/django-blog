@@ -3,10 +3,14 @@
 ## Introducció
 Projecte de blog desenvolupat amb Django com a part del mòdul M3-UF6. Permet gestionar posts, autors i etiquetes.
 
+## Documentació
+- [blog.views](https://sabrinaruiz04.github.io/django-blog/blog.views.html)
+- [blog.models](https://sabrinaruiz04.github.io/django-blog/blog.models.html)
+
 ## Instal·lació ràpida
 
 ### 1. Clona el repositori
-git clone <URL_DEL_TEU_REPOSITORI>
+git clone https://github.com/sabrinaruiz04/django-blog.git
 cd my_site
 
 ### 2. Crea i activa l'entorn virtual
